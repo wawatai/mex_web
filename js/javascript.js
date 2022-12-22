@@ -23,59 +23,30 @@ $(function() {
             $('.topGameList,.topGameList .sport')
             .addClass("display")
             .siblings().removeClass("display");
-
-            $(".topGameList .prev,.topGameList .next")
-            .removeClass("display forSlot forBoard");
         }
         else if($(this).hasClass("liveBtn"))
         {
             $('.topGameList,.topGameList .live')
             .addClass("display")
             .siblings().removeClass("display");
-
-            $(".topGameList .prev,.topGameList .next")
-            .removeClass("display forSlot forBoard");
         }
         else if($(this).hasClass("slotBtn"))
         {
             $('.topGameList,.topGameList .slot')
             .addClass("display")
             .siblings().removeClass("display");
-
-            $(".topGameList .prev,.topGameList .next")
-            .removeClass("forBoard")
-            .addClass("display active forSlot");
-
-            $(".topGameList .prev")
-            .removeClass("active")
-
-            $(".topGameList .slot")
-            .css("transform","translateX(0px)");
         }
         else if($(this).hasClass("fishBtn"))
         {
             $('.topGameList,.topGameList .fish')
             .addClass("display")
             .siblings().removeClass("display");
-
-            $(".topGameList .prev,.topGameList .next")
-            .removeClass("display forSlot forBoard");
         }
         else if($(this).hasClass("boardBtn"))
         {
             $('.topGameList,.topGameList .board')
             .addClass("display")
             .siblings().removeClass("display");
-
-            $(".topGameList .prev,.topGameList .next")
-            .removeClass("forSlot")
-            .addClass("display active forBoard");
-
-            $(".topGameList .prev")
-            .removeClass("active")
-
-            $(".topGameList .board")
-            .css("transform","translateX(0px)");
         }
         else if($(this).hasClass("menu") || $(this).hasClass("event") || $(this).hasClass("vip"))
         {
@@ -92,91 +63,79 @@ $(function() {
 
 //underList點擊滑動
 $(function(){
-    var slot = $('.listWrap .slot li');
-    var slotl = slot.length;
-    var slwp = $('.topGameList .slot');
-    $(slwp).css("width",""+ 257 * slotl - 20 +"");
+    var slotL = $('.listWrap .slot li').length;
+    var slWP = $('.topGameList .slot ol>div');
 
     var n = 0;
+    var pv = $(".topGameList .slot .prev");
+    var nt = $(".topGameList .slot .next");
 
-    $(document).on("click",".listWrap .next.forSlot",function(){
-        n ++;
-        $(slwp).css("transform","translateX("+(-257 * n)+"px)");
-
-        $(".listWrap .prev.forSlot")
-        .addClass("active");
-
-        if(n == 7){
-            n --;
-
-            $(".listWrap .next.forSlot")
-            .removeClass("active");
-        }
-    })
-    $(document).on("click",".listWrap .prev.forSlot",function(){
+    $(pv).click(function(){
         n --;
-        $(slwp).css("transform","translateX("+(-257 * n)+"px)");
+        $(slWP).css("transform","translateX("+(-257 * n)+"px)");
 
-        $(".listWrap .next.forSlot")
+        $(nt)
         .addClass("active");
 
         if(n == -1){
-            $(slwp).css("transform","translateX(0px)");
+            $(slWP).css("transform","translateX(0px)");
             n ++;
 
-            $(".listWrap .prev.forSlot")
+            $(pv)
             .removeClass("active");
         }
     })
+    $(nt).click(function(){
+        n ++;
+        $(slWP).css("transform","translateX("+(-257 * n)+"px)");
 
-    $(slwp).mouseleave(function(){
-        setTimeout(function(){
-            n = 0;
-        },100);
+        $(pv)
+        .addClass("active");
+
+        if(n == slotL - 4){
+            n --;
+
+            $(nt)
+            .removeClass("active");
+        }
     })
 })
 $(function(){
-    var board = $('.listWrap .board li');
-    var boardl = board.length;
-    var bdwp = $('.topGameList .board');
-    $(bdwp).css("width",""+ 257 * boardl - 20 +"");
+    var boardL = $('.listWrap .board li').length;
+    var bdWP = $('.topGameList .board ol>div');
 
     var n = 0;
+    var pv = $(".topGameList .board .prev");
+    var nt = $(".topGameList .board .next");
 
-    $(document).on("click",".listWrap .next.forBoard",function(){
-        n ++;
-        $(bdwp).css("transform","translateX("+(-257 * n)+"px)");
-
-        $(".listWrap .prev.forBoard")
-        .addClass("active");
-
-        if(n == 3){
-            n --;
-
-            $(".listWrap .next.forBoard")
-            .removeClass("active");
-        }
-    })
-    $(document).on("click",".listWrap .prev.forBoard",function(){
+    $(pv).click(function(){
         n --;
-        $(bdwp).css("transform","translateX("+(-257 * n)+"px)");
+        $(bdWP).css("transform","translateX("+(-257 * n)+"px)");
 
-        $(".listWrap .next.forBoard")
+        $(nt)
         .addClass("active");
 
         if(n == -1){
-            $(bdwp).css("transform","translateX(0px)");
+            $(bdWP).css("transform","translateX(0px)");
             n ++;
 
-            $(".listWrap .prev.forBoard")
+            $(pv)
             .removeClass("active");
         }
     })
+    $(nt).click(function(){
+        n ++;
+        $(bdWP).css("transform","translateX("+(-257 * n)+"px)");
 
-    $(bdwp).mouseleave(function(){
-        setTimeout(function(){
-            n = 0;
-        },100);
+        $(pv)
+        .addClass("active");
+
+        if(n == boardL - 4){
+            n --;
+
+            $(nt)
+            .removeClass("active");
+        }
     })
 })
 

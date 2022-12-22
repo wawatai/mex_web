@@ -309,108 +309,113 @@ header {
             .center {
                 width: 1400px;
                 height: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 margin: 0 auto;
 
-                i {
-                    width: 36px;
-                    height: 120px;
-                    @include underList_arrow;
-                    
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        width: 19px;
-                        height: 32px;
-                        left: 50%;
-                        top: 50%;
-                        transform: translate(-50%,-50%) scaleX(-1);
-                    }
-
-                    &.prev {
-                        margin-right: 20px;
-                    }
-                    &.next {
-                        transform: scaleX(-1);
-                        margin-left: 20px;
-                    }
-                }
-
-                .container {
-                    width: 1265px;
+                ul {
+                    width: 100%;
                     height: 100%;
-                    overflow: hidden;
+                    display: none;
+                    align-items: center;
+                    justify-content: center;
 
-                    ul {
-                        display: none;
-                        width: auto;
-                        height: 100%;
-                        transition: 0.6s ease;
+                    &.display {
+                        display: flex;
+                    }
 
-                        &.display {
-                            display: flex;
+                    &.hasArrow {
+                        justify-content: space-between;
+                    }
+
+                    i {
+                        width: 36px;
+                        height: 120px;
+                        @include underList_arrow;
+                        
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            width: 19px;
+                            height: 32px;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%,-50%);
                         }
 
-                        li {
+                        &.prev {
+                            transform: scaleX(-1);
+                        }
+                    }
+
+                    ol {
+                        width: 1265px;
+                        height: 100%;
+                        overflow: hidden;
+
+                        &>div {
                             width: auto;
-                            height: auto;
+                            height: 100%;
                             display: flex;
-                            justify-content: center;
-                            flex-direction: column;
-                            position: relative;
+                            transition: 0.6s ease;
 
-                            div {
-                                width: 237px;
-                                height: 279px;
-                                cursor: pointer;
-                                margin-right: 20px;
-
-                                img {
-                                    width: 100%;
-                                    height: 100%;
-                                    object-fit: contain;
-                                }
-                            }
-
-                            // p {
-                            //     font-size: 14px;
-                            //     padding-top: 8px;
-                            //     text-align: center;
-                            //     font-weight: bold;
-                            //     color: $mainFont_1;
-                            // }
-
-                            // .fixBox {
-                            //     display: none;
-                            //     position: absolute;
-                            //     width: 92%;
-                            //     height: 92%;
-                            //     border-radius: 5px;
-                            //     background: $filter;
-                            //     align-items: center;
-                            //     justify-content: center;
-                            //     flex-direction: column;
-                            //     top: 50%;
-                            //     left: 50%;
-                            //     transform: translate(-50%,-50%);
-                            //     cursor: not-allowed;
-
-                            //     &.display {
-                            //         display: flex;
-                            //     }
+                            li {
+                                width: auto;
+                                height: auto;
+                                display: flex;
+                                justify-content: center;
+                                flex-direction: column;
+                                position: relative;
         
-                            //     p {
-                            //         color: $mainFont_2;
-                            //         font-size: 14px;
-                            //         font-weight: bold;
-
-                            //         &.title {
-                            //             margin-bottom: 30px;
-                            //         }
-                            //     }
-                            // }
+                                div {
+                                    width: 237px;
+                                    height: 279px;
+                                    cursor: pointer;
+                                    margin-right: 20px;
+        
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: contain;
+                                    }
+                                }
+        
+                                // p {
+                                //     font-size: 14px;
+                                //     padding-top: 8px;
+                                //     text-align: center;
+                                //     font-weight: bold;
+                                //     color: $mainFont_1;
+                                // }
+        
+                                // .fixBox {
+                                //     display: none;
+                                //     position: absolute;
+                                //     width: 92%;
+                                //     height: 92%;
+                                //     border-radius: 5px;
+                                //     background: $filter;
+                                //     align-items: center;
+                                //     justify-content: center;
+                                //     flex-direction: column;
+                                //     top: 50%;
+                                //     left: 50%;
+                                //     transform: translate(-50%,-50%);
+                                //     cursor: not-allowed;
+        
+                                //     &.display {
+                                //         display: flex;
+                                //     }
+            
+                                //     p {
+                                //         color: $mainFont_2;
+                                //         font-size: 14px;
+                                //         font-weight: bold;
+        
+                                //         &.title {
+                                //             margin-bottom: 30px;
+                                //         }
+                                //     }
+                                // }
+                            }
                         }
                     }
                 }

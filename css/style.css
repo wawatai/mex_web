@@ -936,70 +936,71 @@ html body header .topGameList .listWrap {
 html body header .topGameList .listWrap .center {
   width: 1400px;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  margin: 0 auto;
+}
+html body header .topGameList .listWrap .center ul {
+  width: 100%;
+  height: 100%;
+  display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 0 auto;
 }
-html body header .topGameList .listWrap .center i {
+html body header .topGameList .listWrap .center ul.display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+html body header .topGameList .listWrap .center ul.hasArrow {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+html body header .topGameList .listWrap .center ul i {
   width: 36px;
   height: 120px;
   background: -webkit-gradient(linear, left top, left bottom, from(#6140B3), to(#469FE3));
   background: linear-gradient(to bottom, #6140B3 0%, #469FE3 100%);
-  border-radius: 50px 0 0 50px;
+  border-radius: 0 50px 50px 0;
   position: relative;
   cursor: pointer;
-  display: none;
   opacity: 0.5;
 }
-html body header .topGameList .listWrap .center i.display {
-  display: block;
-}
-html body header .topGameList .listWrap .center i.active {
+html body header .topGameList .listWrap .center ul i.active {
   opacity: 1;
 }
-html body header .topGameList .listWrap .center i::before {
+html body header .topGameList .listWrap .center ul i::before {
   content: "";
   position: absolute;
   width: 19px;
   height: 32px;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%) scaleX(-1);
-          transform: translate(-50%, -50%) scaleX(-1);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
-html body header .topGameList .listWrap .center i.prev {
-  margin-right: 20px;
-}
-html body header .topGameList .listWrap .center i.next {
+html body header .topGameList .listWrap .center ul i.prev {
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
-  margin-left: 20px;
 }
-html body header .topGameList .listWrap .center .container {
+html body header .topGameList .listWrap .center ul ol {
   width: 1265px;
   height: 100%;
   overflow: hidden;
 }
-html body header .topGameList .listWrap .center .container ul {
-  display: none;
+html body header .topGameList .listWrap .center ul ol > div {
   width: auto;
   height: 100%;
-  -webkit-transition: 0.6s ease;
-  transition: 0.6s ease;
-}
-html body header .topGameList .listWrap .center .container ul.display {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
 }
-html body header .topGameList .listWrap .center .container ul li {
+html body header .topGameList .listWrap .center ul ol > div li {
   width: auto;
   height: auto;
   display: -webkit-box;
@@ -1014,13 +1015,13 @@ html body header .topGameList .listWrap .center .container ul li {
           flex-direction: column;
   position: relative;
 }
-html body header .topGameList .listWrap .center .container ul li div {
+html body header .topGameList .listWrap .center ul ol > div li div {
   width: 237px;
   height: 279px;
   cursor: pointer;
   margin-right: 20px;
 }
-html body header .topGameList .listWrap .center .container ul li div img {
+html body header .topGameList .listWrap .center ul ol > div li div img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
