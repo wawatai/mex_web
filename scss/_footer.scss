@@ -1,0 +1,177 @@
+footer {
+    width: 100%;
+    height: auto;
+
+    //上部
+    .top {
+        width: 100%;
+        height: auto;
+        margin-bottom: 85px;
+
+        .center {
+            width: 1400px;
+            height: auto;
+            margin: 0 auto;
+
+            .textBox {
+                width: 100%;
+                height: auto;
+                text-align: center;
+                margin-bottom: 35px;
+
+                p {
+                    color: $mainColor_1;
+                    font-size: 24px;
+                    font-weight: bold;
+                    text-shadow: 2px 3px 5px $mainShadow_1;
+
+                    &.sub {
+                        font-size: 14px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            ul {
+                width: auto;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+
+                li {
+                    width: 71px;
+                    height: 71px;
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+
+    //下部
+    .footerList {
+        width: 100%;
+        height: auto;
+        margin-bottom: 120px;
+
+        .center {
+            width: 1400px;
+            height: auto;
+            margin: 0 auto;
+
+            .textBox {
+                width: 100%;
+                height: auto;
+                text-align: center;
+                margin-bottom: 35px;
+
+                p {
+                    color: $mainColor_1;
+                    font-size: 24px;
+                    font-weight: bold;
+                    text-shadow: 2px 3px 5px $mainShadow_1;
+
+                    &.sub {
+                        font-size: 14px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            ul {
+                width: 100%;
+                height: auto;
+                display: grid;
+                grid-template-columns: repeat(9,71px);
+                gap: 20px;
+                justify-content: center;
+
+                li {
+                    width: auto;
+                    height: 71px;
+                }
+            }
+        }
+    }
+
+    //downList
+    .downList {
+        width: 100%;
+        height: auto;
+        padding-bottom: 50px;
+
+        ul {
+            width: 1050px;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+
+            li {
+                width: auto;
+                height: auto;
+
+                .title {
+                    color: $mainColor_1;
+                    font-size: 18px;
+                    font-weight: bold;
+                    text-shadow: 2px 3px 5px $mainShadow_1;
+                    margin-bottom: 35px;
+                }
+
+                .listBox {
+                    width: 100%;
+                    height: auto;
+
+                    a {
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        color: $mainColor_1;
+                        font-size: 14px;
+                        font-weight: bold;
+                        text-decoration: none;
+                        position: relative;
+                        margin-bottom: 30px;
+
+                        &:last-child {
+                            margin: 0;
+                        }
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            width: 0;
+                            height: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: -20px;
+                            border-style: solid;
+                            border-width: 8px 0 8px 12px;
+                            border-color: transparent $mainColor_1;
+                            animation: footer_hoverArrow 2s linear 0s infinite;
+                            opacity: 0;
+                            transition: 0.3s all;
+                        }
+
+                        &:hover,&:active,&.active {
+
+                            &::before {
+                                opacity: 1;
+                            }
+                        }
+
+                        @keyframes footer_hoverArrow {
+                            0% {
+                                transform: translateY(-50%) rotateX(0deg);
+                            }
+
+                            100% {
+                                transform: translateY(-50%) rotateX(360deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

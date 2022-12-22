@@ -1,0 +1,295 @@
+.mainWrap {
+    width: 100%;
+    height: auto;
+    margin-bottom: 90px;
+
+    .center {
+        width: 1400px;
+        height: auto;
+        margin: 0 auto;
+
+        //20221221_隱藏marquee_L
+        //跑馬燈
+        // .marqueeArea {
+        //     width: 100%;
+        //     height: 50px;
+        //     background: $marquee_BG;
+        //     box-shadow: 0 0 13px 3px $marquee_Shadow;
+        //     border-radius: 25px;
+        //     margin: 10px 0 60px;
+
+        //     .center {
+        //         width: 100%;
+        //         height: 100%;
+
+        //         .marqueeWrap {
+        //             width: 100%;
+        //             height: 100%;
+        //             display: flex;
+        //             align-items: center;
+
+        //             .marquee_ic {
+        //                 width: 160px;
+        //                 height: 88%;
+        //                 border-radius: 25px;
+        //                 background: $marquee_Linear;
+        //                 margin-left: 3px;
+        //                 display: flex;
+        //                 align-items: center;
+        //                 justify-content: center;
+
+        //                 p {
+        //                     font-size: 16px;
+        //                     font-weight: bold;
+        //                     color: $marquee_LinearWord;
+        //                 }
+        //             }
+
+        //             .marquee {
+        //                 width: 100%;
+        //                 height: auto;
+        //                 overflow: hidden;
+
+        //                 p {
+        //                     font-size: 14px;
+        //                     font-weight: bold;
+        //                     color: $marquee_Word;
+        //                     display: inline-block;
+        //                     animation: marquee 10s linear infinite;
+        //                     padding-left: 100%;
+        //                     white-space: nowrap;
+        //                 }
+
+        //                 @keyframes marquee {
+        //                     0% {
+        //                         transform: translate(0%);
+        //                     }
+
+        //                     100% {
+        //                         transform: translate(-100%);
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+
+        //20221221_新增類別選單_L
+        //mainType
+        .mainType {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 100px;
+
+            li {
+                width: 225px;
+                height: 245px;
+                position: relative;
+                cursor: pointer;
+
+                &:hover,&:active,&.active {
+                    background-position-y: 100%;
+
+                    .arrow_ic {
+                        opacity: 1;
+                    }
+                }
+
+                i:not(.arrow_ic) {
+                    width: 100px;
+                    height: 100px;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
+
+                    &.hot {
+                        background-position-x: 0;
+                    }
+                    &.soccer {
+                        background-position-x: 20%;
+                    }
+                    &.live {
+                        background-position-x: 40%;
+                    }
+                    &.slot {
+                        background-position-x: 60%;
+                    }
+                    &.fish {
+                        background-position-x: 80%;
+                    }
+                    &.board {
+                        background-position-x: 100%;
+                    }
+                }
+
+                p {
+                    color: $mainColor_1;
+                    font-size: 18px;
+                    font-weight: bold;
+                    text-shadow: 2px 3px 5px $mainShadow_1,0px 5px 10px $mainShadow_1;
+                    white-space: nowrap;
+                    position: absolute;
+                    left: 42%;
+                    transform: translateX(-50%);
+                    bottom: 36px;
+                }
+
+                .arrow_ic {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 18px 12px 18px;
+                    border-color: $mainColor_1 transparent;
+                    position: absolute;
+                    left: 39%;
+                    transform: translateX(-50%);
+                    bottom: -25px;
+                    opacity: 0;
+                    transition: 0.3s all;
+                    filter: drop-shadow(0px 3px 2px #00f9ff) drop-shadow(0px 0px 10px #00f9ff);
+                }
+            }
+        }
+        
+        //20221221_新增分隔線_L
+        //typeLine
+        .typeLine {
+            width: 1280px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+
+            i {
+                width: 512px;
+                height: 36px;
+                margin-top: 26px;
+
+                &:last-child {
+                    transform: scaleX(-1);
+                }
+            }
+
+            .textBox {
+                width: auto;
+                height: auto;
+
+                .title {
+                    color: $mainColor_1;
+                    font-size: 30px;
+                    font-weight: bold;
+                }
+
+                .sub {
+                    color: $typeLine_subColor;
+                    font-size: 13px;
+                    font-weight: bold;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .underLine {
+                width: 100%;
+                height: 48px;
+            }
+        }
+
+        //中間選單
+        .typeList {
+            width: 1280px;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 100px 30px;
+            margin: 60px auto 80px;
+
+            li {
+                width: auto;
+                height: 212px;
+                background: #000000;
+                border-radius: 16px;
+                position: relative;
+                cursor: pointer;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    opacity: 0;
+                }
+
+                p {
+                    width: 100%;
+                    color: $mainColor_1;
+                    font-size: 20px;
+                    font-weight: bold;
+                    text-align: center;
+                    text-shadow: 2px 3px 5px $mainShadow_1;
+                    margin-top: 20px;
+                }
+
+                // .fixBox {
+                //     display: none;
+                //     position: absolute;
+                //     width: 100%;
+                //     height: 100%;
+                //     border-radius: 5px;
+                //     background: $filter;
+                //     align-items: center;
+                //     justify-content: center;
+                //     flex-direction: column;
+                //     top: 50%;
+                //     left: 50%;
+                //     transform: translate(-50%,-50%);
+                //     cursor: not-allowed;
+
+                //     &.display {
+                //         display: flex;
+                //     }
+
+                //     p {
+                //         color: $mainFont_2;
+                //         font-size: 18px;
+                //         font-weight: bold;
+                //         line-height: 24px;
+
+                //         &.title {
+                //             margin-bottom: 30px;
+                //         }
+                //     }
+                // }
+            }
+        }
+
+        //20221221_新增pageBox_L
+        //.pageBox
+        .pageBox {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+
+            ul {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+
+                li {
+                    width: 36px;
+                    height: 36px;
+                    @include pageBox;
+                    margin-right: 8px;
+
+                    &:last-child {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

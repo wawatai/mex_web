@@ -1,0 +1,420 @@
+header {
+    width: 100%;
+    height: auto;
+    background: $header_BG;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    //上部
+    .top {
+        width: 1400px;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px auto;
+        
+        //time
+        // .brad {
+        //     font-size: 22px;
+        //     font-weight: bold;
+        //     display: flex;
+        //     align-items: center;
+        //     color: $fontColor_1;
+
+        //     //時間
+        //     .time {
+        //         font-size: 16px;
+        //         margin-left: 10px;
+        //         color: $fontColor_1;
+        //     }
+        // }
+
+        //logo
+        .logo {
+            width: 147px;
+            height: 36px;
+            object-fit: contain;
+        }
+
+        //right
+        .user {
+            width: auto;
+            height: 100%;
+            color: $header_Word;
+            font-size: 14px;
+            font-weight: bold;
+            display: none;
+            align-items: center;
+
+            &.display {
+                display: flex;
+            }
+
+            //unlogin
+            li:not(.platform) {
+                width: auto;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                margin-right: 20px;
+
+                //loginForm
+                .loginForm {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+
+                    div {
+                        width: 230px;
+                        height: 36px;
+                        margin-right: 15px;
+
+                        input {
+                            width: 100%;
+                            height: 100%;
+                            @include headerInput;
+                        }
+                    }
+
+                    button {
+                        width: 130px;
+                        height: 50px;
+                        
+                        &.loginBtn {
+                            @include headerBtn_1;
+                        }
+
+                        &.signupBtn {
+                            @include headerBtn_2;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+
+                //20221220_刪除忘記密碼_L
+                //忘記密碼
+                // &.forget {
+                //     font-size: 14px;
+                //     cursor: pointer;
+                //     font-weight: bold;
+                //     letter-spacing: 1px;
+
+                //     &:hover,&:active,&.active {
+                //         background: $header_Hover;
+                //     }
+
+                //     i {
+                //         display: block;
+                //         width: 19px;
+                //         height: 19px;
+                //         margin-right: 10px;
+                //     }
+                // }
+
+                //lang
+                &.lang {
+                    
+                    //20221220_新增selectBox + arrow_ic
+                    .selectBox {
+                        width: auto;
+                        height: auto;
+                        display: flex;
+                        align-items: center;
+
+                        select {
+                            width: auto;
+                            height: auto;
+                            @include headerLang;
+                        }
+
+                        i {
+                            width: 0;
+                            height: 0;
+                            border-style: solid;
+                            border-width: 8px 6px 0 6px;
+                            border-color: $mainColor_1 transparent;
+                            margin: 2px 0 0 5px;
+                        }
+                    }
+
+                    //20221220_新增lang_ic_L
+                    i {
+                        width: 27px;
+                        height: 27px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            //login
+            &.alLogin {
+
+                li:not(.platform) {
+                    position: relative;
+                    cursor: pointer;
+
+                    &:hover,&:active,&.active {
+                        background: $header_Hover;
+                    }
+
+                    &:nth-of-type(1),
+                    &:nth-of-type(2) {
+                        cursor: default;
+                        
+                        &:hover,&:active,&.active {
+                            background: none;
+                        }
+                    }
+
+                    //等級
+                &.lv {
+                    color: $header_LV_1;
+                    font-weight: bold;
+
+                    span {
+                        color: $header_LV_2;
+                        padding-right: 15px;
+                    }
+                }
+
+                //transfer
+                &.moneyTotal {
+                    position: relative;
+                    color: $header_Money;
+                    @include headerArrow;
+                    padding: 0 20px 0 14px;
+
+                    &::after {
+                        right: 16px;
+                    }
+
+                    .total {
+                        padding-right: 8px;
+                    }
+
+                    .transferInfo {
+                        width: 290px;
+                        height: auto;
+                        top: 40px;
+                        @include headerMoneyList;
+
+                        &.display {
+                            display: block;
+                        }
+
+                        li {
+                            width: 100%;
+                            height: 47px;
+
+                            div {
+
+                                .money {
+                                    
+                                    i {
+                                        display: none;
+                                        position: absolute;
+                                        width: 20px;
+                                        height: 20px;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                        right: -6px;
+                                        animation: circle 1s linear infinite;
+
+                                        &.display {
+                                            display: block;
+                                        }
+                                    }
+
+                                    @keyframes circle {
+                                        0% {
+                                            transform: translateY(-50%) rotate(0deg);
+                                        }
+
+                                        100% {
+                                            transform: translateY(-50%) rotate(360deg);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                }
+            }
+        }
+    }
+
+    //選單
+    .gameNav {
+        width: 100%;
+        height: 90px;
+
+        .center {
+            width: 1400px;
+            height: 100%;
+            margin: 0 auto;
+
+            ul {
+                width: auto;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+
+                li {
+                    width: auto;
+                    height: 100%;
+                    color: $mainColor_1;
+                    font-size: 18px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    display: flex;
+                    align-items: center;
+                    transition: 0.3s all;
+                    cursor: pointer;
+                    padding: 0 25px;
+                    opacity: 0.6;
+
+                    &:hover,&:active,&.active {
+                        text-shadow: 2px 3px 5px $mainShadow_1,0px 5px 10px $mainShadow_1;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+
+    //下拉式選單
+    .topGameList {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        position: absolute;
+        left: 0px;
+        top: 180px;
+        transition: 0.3s all;
+
+        &.display {
+            height: 336px;
+        }
+
+        .listWrap {
+            width: 100%;
+            height: 100%;
+            background: $header_underList_BG;
+
+            .center {
+                width: 1400px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto;
+
+                i {
+                    width: 36px;
+                    height: 120px;
+                    @include underList_arrow;
+                    
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 19px;
+                        height: 32px;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%,-50%) scaleX(-1);
+                    }
+
+                    &.prev {
+                        margin-right: 20px;
+                    }
+                    &.next {
+                        transform: scaleX(-1);
+                        margin-left: 20px;
+                    }
+                }
+
+                .container {
+                    width: 1265px;
+                    height: 100%;
+                    overflow: hidden;
+
+                    ul {
+                        display: none;
+                        width: auto;
+                        height: 100%;
+                        transition: 0.6s ease;
+
+                        &.display {
+                            display: flex;
+                        }
+
+                        li {
+                            width: auto;
+                            height: auto;
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+                            position: relative;
+
+                            div {
+                                width: 237px;
+                                height: 279px;
+                                cursor: pointer;
+                                margin-right: 20px;
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: contain;
+                                }
+                            }
+
+                            // p {
+                            //     font-size: 14px;
+                            //     padding-top: 8px;
+                            //     text-align: center;
+                            //     font-weight: bold;
+                            //     color: $mainFont_1;
+                            // }
+
+                            // .fixBox {
+                            //     display: none;
+                            //     position: absolute;
+                            //     width: 92%;
+                            //     height: 92%;
+                            //     border-radius: 5px;
+                            //     background: $filter;
+                            //     align-items: center;
+                            //     justify-content: center;
+                            //     flex-direction: column;
+                            //     top: 50%;
+                            //     left: 50%;
+                            //     transform: translate(-50%,-50%);
+                            //     cursor: not-allowed;
+
+                            //     &.display {
+                            //         display: flex;
+                            //     }
+        
+                            //     p {
+                            //         color: $mainFont_2;
+                            //         font-size: 14px;
+                            //         font-weight: bold;
+
+                            //         &.title {
+                            //             margin-bottom: 30px;
+                            //         }
+                            //     }
+                            // }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

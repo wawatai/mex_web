@@ -1,0 +1,57 @@
+// .sideBar {
+
+//     .download {
+//         position: fixed;
+//         left: 10px;
+//         top: 185px;
+//         z-index: 1;
+//         width: 50px;
+//         height: 185px;
+//         font-size: 20px;
+//         border-radius: 50px;
+//         font-weight: bold;
+//         writing-mode: vertical-lr;
+//         letter-spacing: 8px;
+//         display: flex;
+//         align-items: center;
+//         justify-content: space-evenly;
+//         cursor: pointer;
+//         color: $sideBar_Word;
+//         background: $sideBar_BG1;
+//         border: solid 2px $sideBar_Border1;
+//         box-shadow: 0 0 7px 0 $mainShadow_1;
+
+//         i {
+//             width: 25px;
+//             height: 25px;
+//         }
+//     }
+
+//     .rightSide {
+//         position: fixed;
+//         right: 10px;
+//         top: 185px;
+//         z-index: 1;
+//         width: auto;
+//         height: auto;
+
+//         li {
+//             width: 55px;
+//             height: 55px;
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             margin-bottom: 5px;
+//             border-radius: 30px;
+//             background: $sideBar_BG2;
+//             border: solid 1px $sideBar_Border2;
+//             box-shadow: 0 0 7px 0 $mainShadow_1;
+//             cursor: pointer;
+
+//             i {
+//                 width: 30px;
+//                 height: 30px;
+//             }
+//         }
+//     }
+// }
